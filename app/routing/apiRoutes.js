@@ -11,7 +11,7 @@ router.post("/api/new/friend", function (req, res) {
 
     console.log(newFriend);
 
-    table.push(newFriend);
+    friends.push(newFriend);
     console.log('New friend match');
 
     res.json(newFriend);
