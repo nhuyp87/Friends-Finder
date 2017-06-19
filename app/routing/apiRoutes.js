@@ -18,8 +18,8 @@ router.post("/api/new/friend", function (req, res) {
 });
 
 
-router.get('/api/table', function (req, res) {
-    var data = table.get();
+router.get('/api/friends', function (req, res) {
+    var data = friends.get();
     console.log(data);
     return res.json(data);
 });

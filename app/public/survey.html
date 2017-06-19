@@ -172,18 +172,18 @@
 		<br>
 
 		<!--Modal-->
-		<div class="modal fade">
+		<div class="modal fade" id="friendModal">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
 						<h5 class="modal-title">Your Match</h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+         				 <span aria-hidden="true">&times;</span>
+       					 </button>
 					</div>
 					<div class="modal-body">
 						<h3 id="friendName" align="center">New Best Friend</h3>
-                        <img id="friendPhoto" src="" class="img center-block" width="300px">
+						<img id="friendPhoto" src="" class="img center-block" width="300px">
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -233,11 +233,11 @@
 
 			console.log(newUser);
 
-			$.get("/api", function (data) {
+			$.get("/api/friends", function (data) {
 
 				if (data) {
 
-					
+
 					var matchScore = 99;
 					var matchIndex = 0;
 
@@ -246,8 +246,8 @@
 
 						var matchScoreTemp = 0;
 
-						for (var j = 0; j < newProfile.scores.length; j++) {
-							matchScoreTemp += Math.abs(newProfile.scores[j] - data[i].scores[j]);
+						for (var j = 0; j < newUser.scores.length; j++) {
+							matchScoreTemp += Math.abs(newUser.scores[j] - data[i].scores[j]);
 						}
 
 						console.log(data[i].name, matchScoreTemp);
@@ -260,10 +260,10 @@
 					}
 
 					// Populate modal with appropriate data and toggle modal
-					$("#matchName").text(data[matchIndex].name);
-					$("#matchPhoto").attr("src", data[matchIndex].photo);
+					$("#friendName").text(data[matchIndex].name);
+					$("#friendPhoto").attr("src", data[matchIndex].photo);
 
-					$("#myModal").modal("toggle");
+					$("#friendModal").modal("toggle");
 
 
 
@@ -276,7 +276,7 @@
 
 			}); // Close GET function
 
-			$.post("/api/new", newUser)
+			$.post("/api/new/friend", newUser)
 				.done(function (data) {
 					console.log("Added profile: " + JSON.stringify(data));
 				});

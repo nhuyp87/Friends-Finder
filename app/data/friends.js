@@ -2,7 +2,7 @@ var friends =
     [
         {
             "name": "Ahmed",
-            "photo": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+            "photo": "https://d30y9cdsu7xlg0.cloudfront.net/png/5024-200.png",
             "scores": [
                 5,
                 1,
@@ -18,8 +18,8 @@ var friends =
         },
 
         {
-            "name": "John",
-            "photo": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+            "name": "Jon",
+            "photo": "https://typeset-beta.imgix.net/rehost%2F2016%2F9%2F13%2Fc34b246c-f077-4dfd-8cbe-81e958a68a5c.jpeg",
             "scores": [
                 1,
                 2,
@@ -35,8 +35,8 @@ var friends =
         },
 
         {
-            "name": "Joe",
-            "photo": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+            "name": "Batman",
+            "photo": "https://upload.wikimedia.org/wikipedia/en/1/17/Batman-BenAffleck.jpg",
             "scores": [
                 1,
                 1,
@@ -55,10 +55,10 @@ var friends =
 
 var friendModel = {
     push(data) {
-        table.push(data);
+        friends.push(data);
     },
     get() {
-        return table;
+        return friends;
     }
 }
 
