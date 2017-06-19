@@ -30,11 +30,11 @@
 						<h2 class="panel-title">About You</h2>
 					</div>
 					<div class="panel-body">
-						<h4>Name (Required)</h4>
-						<input type="text" name="" id="name" class="form-control" required>
+						<h4>Name</h4>
+						<input type="text" name="" id="name" class="form-control">
 
-						<h4>Link to Photo Image (Required)</h4>
-						<input type="text" name="" id="photo" class="form-control" required>
+						<h4>Link to Photo Image</h4>
+						<input type="text" name="" id="photo" class="form-control">
 
 					</div>
 				</div>
@@ -46,7 +46,7 @@
 					<div class="panel-body">
 						<h3><strong>Question 1</strong></h3>
 						<h4>I see myself as extraverted, enthusiatic.</h4>
-							<select data-placeholder="" class="chosen-select" id="q1">
+						<select data-placeholder="" class="chosen-select" id="q1">
 							<option value=""></option>
 							<option value="1">1 (Strongly Disagree)</option>
 							<option value="2">2</option>
@@ -57,7 +57,7 @@
 
 						<h3><strong>Question 2</strong></h3>
 						<h4> I see myself as critical, quarrelsome.</h4>
-							<select data-placeholder="" class="chosen-select" id="q2">
+						<select data-placeholder="" class="chosen-select" id="q2">
 							<option value=""></option>
 							<option value="1">1 (Strongly Disagree)</option>
 							<option value="2">2</option>
@@ -69,7 +69,7 @@
 
 						<h3><strong>Question 3</strong></h3>
 						<h4>I see myself as anxious, easily upset.</h4>
-							<select data-placeholder="" class="chosen-select" id="q3">
+						<select data-placeholder="" class="chosen-select" id="q3">
 							<option value=""></option>
 							<option value="1">1 (Strongly Disagree)</option>
 							<option value="2">2</option>
@@ -81,7 +81,7 @@
 
 						<h3><strong>Question 4</strong></h3>
 						<h4> I see myself as dependable, self-disciplined.</h4>
-							<select data-placeholder="" class="chosen-select" id="q4">
+						<select data-placeholder="" class="chosen-select" id="q4">
 							<option value=""></option>
 							<option value="1">1 (Strongly Disagree)</option>
 							<option value="2">2</option>
@@ -93,7 +93,7 @@
 
 						<h3><strong>Question 5</strong></h3>
 						<h4> I see myself as open to new experiences, complex.</h4>
-							<select data-placeholder="" class="chosen-select" id="q5">
+						<select data-placeholder="" class="chosen-select" id="q5">
 							<option value=""></option>
 							<option value="1">1 (Strongly Disagree)</option>
 							<option value="2">2</option>
@@ -105,7 +105,7 @@
 
 						<h3><strong>Question 6</strong></h3>
 						<h4> I see myself as reserved, quiet.</h4>
-							<select data-placeholder="" class="chosen-select" id="q6">
+						<select data-placeholder="" class="chosen-select" id="q6">
 							<option value=""></option>
 							<option value="1">1 (Strongly Disagree)</option>
 							<option value="2">2</option>
@@ -117,7 +117,7 @@
 
 						<h3><strong>Question 7</strong></h3>
 						<h4>I see myself as sympathetic, warm.</h4>
-							<select data-placeholder="" class="chosen-select" id="q7">
+						<select data-placeholder="" class="chosen-select" id="q7">
 							<option value=""></option>
 							<option value="1">1 (Strongly Disagree)</option>
 							<option value="2">2</option>
@@ -128,7 +128,7 @@
 
 						<h3><strong>Question 8</strong></h3>
 						<h4>I see myself as disorganized, careless.</h4>
-							<select data-placeholder="" class="chosen-select" id="q8">
+						<select data-placeholder="" class="chosen-select" id="q8">
 							<option value=""></option>
 							<option value="1">1 (Strongly Disagree)</option>
 							<option value="2">2</option>
@@ -139,7 +139,7 @@
 
 						<h3><strong>Question 9</strong></h3>
 						<h4>I see myself as calm, emotionally stable.</h4>
-							<select data-placeholder="" class="chosen-select" id="q9">
+						<select data-placeholder="" class="chosen-select" id="q9">
 							<option value=""></option>
 							<option value="1">1 (Strongly Disagree)</option>
 							<option value="2">2</option>
@@ -150,7 +150,7 @@
 
 						<h3><strong>Question 10</strong></h3>
 						<h4>I see myself as conventional, uncreative.</h4>
-							<select data-placeholder="" class="chosen-select" id="q10">
+						<select data-placeholder="" class="chosen-select" id="q10">
 							<option value=""></option>
 							<option value="1">1 (Strongly Disagree)</option>
 							<option value="2">2</option>
@@ -161,7 +161,7 @@
 						<br>
 						<br>
 						<!-- Submit Button -->
-						<button class="btn btn-primary" id= "submit" type="submit">Submit</button>
+						<button class="btn btn-primary" id="submit" type="submit">Submit</button>
 
 					</div>
 				</div>
@@ -176,16 +176,16 @@
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title">Modal title</h5>
+						<h5 class="modal-title">Your Match</h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
 					</div>
 					<div class="modal-body">
-						<p>Modal body text goes here.</p>
+						<h3 id="friendName" align="center">New Best Friend</h3>
+                        <img id="friendPhoto" src="" class="img center-block" width="300px">
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-primary">Save changes</button>
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 					</div>
 				</div>
@@ -215,46 +215,75 @@
 		$("#submit").on("click", function () {
 
 			var newUser = {
-                name: $("#name").val().trim(),
-                photo: $("#photo").val().trim(),
-                scores: [
-                    $("#q1").val().trim(),
-                    $("#q2").val().trim(),
-                    $("#q3").val().trim(),
-                    $("#q4").val().trim(),
-                    $("#q5").val().trim(),
-                    $("#q6").val().trim(),
-                    $("#q7").val().trim(),
-                    $("#q8").val().trim(),
-                    $("#q9").val().trim(),
-                    $("#q10").val().trim()
-                ]
-            };
+				name: $("#name").val().trim(),
+				photo: $("#photo").val().trim(),
+				scores: [
+					$("#q1").val().trim(),
+					$("#q2").val().trim(),
+					$("#q3").val().trim(),
+					$("#q4").val().trim(),
+					$("#q5").val().trim(),
+					$("#q6").val().trim(),
+					$("#q7").val().trim(),
+					$("#q8").val().trim(),
+					$("#q9").val().trim(),
+					$("#q10").val().trim()
+				]
+			};
 
+			console.log(newUser);
 
 			$.get("/api", function (data) {
-				console.log(dataTable);
 
-				var customer = {
-					customerName: $("#reserve_name").val().trim(),
-					phoneNumber: $("#reserve_phone").val().trim(),
-					customerEmail: $("#reserve_email").val().trim(),
-					customerID: $("#reserve_uniqueID").val().trim()
-				};
+				if (data) {
 
-				console.log(customer);
+					
+					var matchScore = 99;
+					var matchIndex = 0;
 
-				
+					// Compare user with other profiles in friends array
+					for (var i = 0; i < data.length; i++) {
+
+						var matchScoreTemp = 0;
+
+						for (var j = 0; j < newProfile.scores.length; j++) {
+							matchScoreTemp += Math.abs(newProfile.scores[j] - data[i].scores[j]);
+						}
+
+						console.log(data[i].name, matchScoreTemp);
+
+						if (matchScoreTemp < matchScore) {
+							matchIndex = i;
+							matchScore = matchScoreTemp;
+						}
+
+					}
+
+					// Populate modal with appropriate data and toggle modal
+					$("#matchName").text(data[matchIndex].name);
+					$("#matchPhoto").attr("src", data[matchIndex].photo);
+
+					$("#myModal").modal("toggle");
+
+
+
+				} else {
+					console.error("You didn't answer all of the questions!");
+				}
+
+
+
+
 			}); // Close GET function
 
 			$.post("/api/new", newUser)
-                .done(function (data) {
-                    console.log("Added profile: " + JSON.stringify(data));
-                });
+				.done(function (data) {
+					console.log("Added profile: " + JSON.stringify(data));
+				});
 
 
-		});
+		}); // Closes on-click function
 
-	});
+	}); // Closes document.ready()
 
 </script>
